@@ -194,7 +194,7 @@ function execute_sql_file($name = null, $sql_file_path = null)
     $str = null;
     for ($i = 0; $i <= count($sql_stream) - 1; $i++) {
         $line = $sql_stream[$i];
-        if ($line[0] != '#') {
+        if ($line[0] != '#' && $line[0].$line[1] != '--') {
             $pos = strrpos($line, ";");
             if ($pos != false) {
                 $str .= $line;
